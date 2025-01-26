@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-46069.htm" />
+    <!-- TITLE OF SITE -->
+    <title>用指针低三位存放额外信息的优化方法 &#8211; 程鑫 _在线工具</title>
+        <meta name="description" content="在8字节对齐的情况下指针的低三位都是0，在某些情况下我们需要维持跟指针对应的额外信息，例如标志位，但是又不想为此创建一个结构体，那就可以利用指针的低三位来存储额外信息。 比如说我们希望原子操作的类型是" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-46069.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="用指针低三位存放额外信息的优化方法 &#8211; 程鑫 _在线工具" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/f5222f4a5b42a2fcf3ddc7aa5dc90f30.webp" />
+        <meta property="og:release_date" content="2025-01-25T09:53:32" />
+    <meta property="og:updated_time" content="2025-01-25T09:53:32" />
+        <meta property="og:description" content="在8字节对齐的情况下指针的低三位都是0，在某些情况下我们需要维持跟指针对应的额外信息，例如标志位，但是又不想为此创建一个结构体，那就可以利用指针的低三位来存储额外信息。 比如说我们希望原子操作的类型是" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="用指针低三位存放额外信息的优化方法 &#8211; 程鑫 _在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                        <li><a href="#">关于</a></li>
+                            <li><a href="#">联系</a></li>
+                        </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>用指针低三位存放额外信息的优化方法 &#8211; 程鑫 _在线工具</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				</h1> <p>在8字节对齐的情况下指针的低三位都是0，在某些情况下我们需要维持跟指针对应的额外信息，例如标志位，但是又不想为此创建一个结构体，那就可以利用指针的低三位来存储额外信息。</p> <p>比如说我们希望原子操作的类型是64位的数据，这样可以利用CMPXCHG机器指令实现CAS操作，即我们希望定义<code>std::atomic&lt;T *&gt;</code>的变量实现原子操作，而不希望定义<code>std::atomic&lt;S&gt;</code>，S为某个结构体。这时候就可以应用上述技巧。</p> <p>具体实现方式如下所示：</p> <p><code>std::uintptr_t</code>是定义一个可以表示地址值（指针值即地址值）的无符号整型。将指针转换成<code>std::uintptr_t</code>然后进行位运算。以下代码作为示例：</p> <pre><code class="language-c++">#include &lt;iostream&gt; #include &lt;stdint.h&gt;  struct Data {     // 定义一些数据成员     long int a;     long int b;     long int c; };  // 定义三个标志位，不用细究三个标志位的具体含义，这个在这里不重要。 static constexpr std::uintptr_t HAS_DATA = 1; static constexpr std::uintptr_t NEED_DATA = 2; static constexpr std::uintptr_t CLOSED = 4; static constexpr std::uintptr_t FLAGS_MASK = HAS_DATA | NEED_DATA | CLOSED; static constexpr std::uintptr_t PTR_MASK = ~FLAGS_MASK;  int main() {     Data * dp = new Data();     dp-&gt;a = 88;     dp-&gt;b = 99;     dp-&gt;c = 77;      std::cout &lt;&lt; "指针值为 " &lt;&lt; std::hex &lt;&lt; reinterpret_cast&lt;int64_t&gt;(dp) &lt;&lt; std::endl;     // 在指针上附加上标志位     std::uintptr_t ptr_int = reinterpret_cast&lt;std::uintptr_t&gt;(dp) | HAS_DATA;     std::cout &lt;&lt; "加过标记位后 " &lt;&lt; std::hex &lt;&lt; ptr_int &lt;&lt; std::endl;      // 取标志位     std::uintptr_t flags = ptr_int &amp; FLAGS_MASK;     std::cout &lt;&lt; "标记位 " &lt;&lt; flags &lt;&lt; std::endl;      // 需要用指针的时候，清零低三位，恢复指针值原来的值     dp = reinterpret_cast&lt;Data*&gt;(ptr_int &amp; PTR_MASK);     std::cout &lt;&lt; "使用恢复后的指针" &lt;&lt; std::dec &lt;&lt; dp-&gt;a &lt;&lt; ", " &lt;&lt; dp-&gt;b &lt;&lt; ", " &lt;&lt; dp-&gt;c &lt;&lt; std::endl;     return 0; } </code></pre> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-45596.htm">动物医院专科认证（动物医院资质）</a></p>
+                                        <p>下一个：<a href="/news/article-46070.htm">被猫轻微咬伤一个小孔没有流血（被猫轻微咬伤一个小孔没有流血怎么办）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44578.htm" title="吉泰饲料有限公司官网（吉泰饲料有限公司官网电话）">吉泰饲料有限公司官网（吉泰饲料有限公司官网电话）</a></li>
+                        <li class="py-2"><a href="/news/article-29049.htm" title="我们如何计算MySQL中两个时间值之间的差？">我们如何计算MySQL中两个时间值之间的差？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-node-subscribe.htm" title="1月17日→22.5M/S|2025年最新免费节点Mellow Github订阅链接地址">1月17日→22.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41108.htm" title="养布偶的都是有钱人（养布偶的都是有钱人嘛）">养布偶的都是有钱人（养布偶的都是有钱人嘛）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-subscribe-node.htm" title="1月16日→20.2M/S|2025年最新免费节点Mellow Github订阅链接地址">1月16日→20.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-3-node-share-links.htm" title="11月3日→23M/S|2024年最新免费节点Mellow Github订阅链接地址">11月3日→23M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-2-node-share.htm" title="1月2日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址">1月2日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41107.htm" title="昆明免费领养猫咪的地方（昆明本地免费领养猫）">昆明免费领养猫咪的地方（昆明本地免费领养猫）</a></li>
+                        <li class="py-2"><a href="/news/article-32376.htm" title="男生开什么店合适（男生开店什么店比较好?）">男生开什么店合适（男生开店什么店比较好?）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-subscribe-node.htm" title="10月28日→20.1M/S|2024年最新免费节点Mellow Github订阅链接地址">10月28日→20.1M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
