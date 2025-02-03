@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
         <link rel="canonical" href="https://mellowgithub.github.io/news/article-29980.htm" />
@@ -7,9 +7,37 @@
     <title>Java中线程状态+线程安全问题+synchronized的用法详解_java_</title>
         <meta name="description" content="目录  java中的线程状态???? 线程安全问题案例分析????  多线程对同一变量进行写操作???? 内存可见性问题???? 指令重排序问题????  synchronized的用法????  s" />
         <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-29980.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="Java中线程状态+线程安全问题+synchronized的用法详解_java_" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/b3d5fa83b0c6a4a1026f41a1322be46f.webp" />
+        <meta property="og:release_date" content="2024-12-23T10:00:20" />
+    <meta property="og:updated_time" content="2024-12-23T10:00:20" />
+        <meta property="og:description" content="目录  java中的线程状态???? 线程安全问题案例分析????  多线程对同一变量进行写操作???? 内存可见性问题???? 指令重排序问题????  synchronized的用法????  s" />
+        
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java中线程状态+线程安全问题+synchronized的用法详解_java_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
     <!-- CSS Begins
 ================================================== -->
     <!--Animate Effect-->
@@ -125,16 +153,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-subscribe-node.htm" title="12月9日→22.7M/S|2024年最新免费节点Mellow Github订阅链接地址">12月9日→22.7M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-29981.htm" title="动物接种疫苗多少钱一针啊 动物接种疫苗多少钱一针啊图片">动物接种疫苗多少钱一针啊 动物接种疫苗多少钱一针啊图片</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-8-node-share.htm" title="11月8日→20.7M/S|2024年最新免费节点Mellow Github订阅链接地址">11月8日→20.7M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-30476.htm" title="动物医院要求什么学历才能进（动物医院属于什么专业）">动物医院要求什么学历才能进（动物医院属于什么专业）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-7-node-share-links.htm" title="11月7日→21.4M/S|2024年最新免费节点Mellow Github订阅链接地址">11月7日→21.4M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-29-node-share.htm" title="9月29日→20M/S|2024年最新免费节点Mellow Github订阅链接地址">9月29日→20M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-6-node-share-links.htm" title="11月6日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址">11月6日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-node-subscribe.htm" title="11月5日→20.4M/S|2024年最新免费节点Mellow Github订阅链接地址">11月5日→20.4M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-node-share.htm" title="11月30日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址">11月30日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-27655.htm" title="我所在的城市有一家动物医院的英语怎么写（在我的城市有一家宠物医院的英语怎么说）">我所在的城市有一家动物医院的英语怎么写（在我的城市有一家宠物医院的英语怎么说）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-high-speed-nodes.htm" title="1月19日→18.3M/S|2025年最新免费节点Mellow Github订阅链接地址">1月19日→18.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28585.htm" title="动物疫苗公司10强名单 动物疫苗公司10强名单公布">动物疫苗公司10强名单 动物疫苗公司10强名单公布</a></li>
+                        <li class="py-2"><a href="/news/article-24873.htm" title="动物防疫疫苗管理要点是什么呢英语（动物防疫疫苗管理要点是什么呢英语翻译）">动物防疫疫苗管理要点是什么呢英语（动物防疫疫苗管理要点是什么呢英语翻译）</a></li>
+                        <li class="py-2"><a href="/news/article-25340.htm" title="上海宠物领养中心官网电话（上海宠物领养中心官网电话号码）">上海宠物领养中心官网电话（上海宠物领养中心官网电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-41599.htm" title="动物防疫站***需要什么手续（动物防疫站***需要什么手续呢）">动物防疫站***需要什么手续（动物防疫站***需要什么手续呢）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-node-share-links.htm" title="11月19日→19.3M/S|2024年最新免费节点Mellow Github订阅链接地址">11月19日→19.3M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22566.htm" title="家养的布偶猫值得买吗（家养布偶猫价格多少钱一只）">家养的布偶猫值得买吗（家养布偶猫价格多少钱一只）</a></li>
+                        <li class="py-2"><a href="/news/article-32862.htm" title="Vue3实践setup函数详解">Vue3实践setup函数详解</a></li>
+                        <li class="py-2"><a href="/news/article-30964.htm" title="Tensorflow迁移学习加载预训练模型并修改变量shape和value的方法">Tensorflow迁移学习加载预训练模型并修改变量shape和value的方法</a></li>
+                        <li class="py-2"><a href="/news/article-36679.htm" title="动物疫苗接种时间表图片大全高清视频（动物疫苗接种时间表图片大全高清视频播放）">动物疫苗接种时间表图片大全高清视频（动物疫苗接种时间表图片大全高清视频播放）</a></li>
                     </ul>
     </div>
 </div>
@@ -146,19 +174,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">5</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
