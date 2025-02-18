@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-58228.htm" />
+    <!-- TITLE OF SITE -->
+    <title>GIT 中如何打标签（git tag）</title>
+        <meta name="description" content="前言 0x1 GIT 标签常用指令 0x2 轻量标签 0x3 附注标签 0x4 远程仓库中的标签     在我们开发的过程中，可能经过多次 commit 提交才会确定一个版本，那么除了用 commit" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-58228.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="GIT 中如何打标签（git tag）" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/ea66f7f269f28d881db4af35bfbae7da.webp" />
+        <meta property="og:release_date" content="2025-02-17T09:58:20" />
+    <meta property="og:updated_time" content="2025-02-17T09:58:20" />
+        <meta property="og:description" content="前言 0x1 GIT 标签常用指令 0x2 轻量标签 0x3 附注标签 0x4 远程仓库中的标签     在我们开发的过程中，可能经过多次 commit 提交才会确定一个版本，那么除了用 commit" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="GIT 中如何打标签（git tag）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>GIT 中如何打标签（git tag）</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3></h3> <ul> <li><a href="#_3" rel="nofollow">前言</a></li> <li><a href="#0x1_GIT__6" rel="nofollow">0x1 GIT 标签常用指令</a></li> <li><a href="#0x2__20" rel="nofollow">0x2 轻量标签</a></li> <li><a href="#0x3__26" rel="nofollow">0x3 附注标签</a></li> <li><a href="#0x4__32" rel="nofollow">0x4 远程仓库中的标签</a></li> </ul> </div> <hr/> </h1> <p>在我们开发的过程中，可能经过多次 commit 提交才会确定一个版本，那么除了用 commit comments 来标识一次提交记录，还有没有什么更好的办法呢？GIT 为我们提供了标签这个功能，使用标签可以对某一次提交记录做上一个小标记，就像我们看书的时候，看到很有意思想要做个记号，可以用小的标签纸贴在那一页的边上，这让我们以后可以更方便的索引。</p> <hr/> </h1> <p>GIT 中的标签分为两种，一种是<strong>轻量标签</strong>（lightweight tag），一种是<strong>附注标签</strong>（annotated tag）。以下是一些常用的与标签相关的命令：</p> <ul> <li><code>git tag &lt;lightweght_name&gt;</code>：为当前分支所在的提交记录打上轻量标签。</li> <li><code>git tag &lt;lightweght_name&gt; &lt;commit SHA-1 value&gt;</code>：为某次具体的提交记录打上轻量标签。</li> <li><code>git tag -a &lt;anotated_name&gt; -m &lt;tag_message&gt;</code>：为当前分支所在的提交记录打上附注标签。</li> <li><code>git tag</code>：列出所有的标签名。</li> <li><code>git tag -d &lt;tag_name&gt;</code>：删除某个标签，本质上就是移除<strong>.git/refs/tags/</strong> 中对应的文件。</li> <li><code>git show &lt;tag_name&gt;</code>：显示标签对应提交记录的具体信息。</li> <li><code>git push &lt;remote&gt; &lt;tag_name&gt;</code>：推送某个标签到远程仓库。</li> <li><code>git push &lt;remote&gt; --tags</code>：推送所有标签到远程仓库。</li> <li><code>git push &lt;remote&gt; --delete &lt;tag_name&gt;</code>：删除远程仓库中的某个标签。</li> </ul> <blockquote> <p>[注]：标签与分支不相关。</p> </blockquote> <hr/> </h1> <p>轻量标签的创建十分简单，使用命令<code>git tag &lt;lightweight_name&gt;</code> 则会为当前所在的提交记录打上一个轻量标签。那么这个命令会发生什么呢？其实很简单，在使用这个命令后，会在<strong>.git/refs/tags/</strong> 目录下生成一个以<code>&lt;lightweight name&gt;</code> 为名字的文件，文件中存放了标签所对应提交记录的 commit 对象的 SHA-1 值。如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/9bfb72bc744d04d2f3f135c1245fbf3c.jpg" alt="GIT 中如何打标签（git tag）"><br /> 假设我想为上述三个提交记录中的第一次提交打上版本 0 的标签，也是很容易做到的，同时使用<code>git log</code> 命令时也会显示出标签的名称：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/78177554de3ede2bac6d75f5895b8aeb.jpg" alt="GIT 中如何打标签（git tag）"></p> <hr/> </h1> <p>创建附注标签也非常简单，只要加上<code>-a</code> 选项即可。同时还可以通过<code>-m</code> 选项指定一条存储在标签中的信息，如果没有指定则 GIT 会打开编辑器要求你输入。假如我们为当前的提交记录打上一个附注标签，可以查看标签如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/ed1541f10a134f242063062a8e148b30.jpg" alt="GIT 中如何打标签（git tag）"><br /><strong>附注标签同样也在 .git/refs/tags/ 目录下生成对应的文件，但是这个文件中不再存储该标签对应的 commit 对象的 SHA-1 值，而是存放了一个称为<font color="red"> tag</font>对象的 SHA-1 值，这个 tag 对象中就存储了与这个附注标签相关的信息（包括打标签者的名字、电子邮件地址、日期时间、一个标签信息）和这个标签所对应的 commit 对象的 SHA-1 值。</strong> 我们可以查看如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220722/34b40a82caa3c8d6a79a2a16db513270.jpg" alt="GIT 中如何打标签（git tag）"></p> <hr/> </h1> <p>我们想想标签文件所在的文件夹和其中保存的信息，是不是觉得其和分支很像？这使得他也有一个特点，就是在我们使用<code>git push</code> 命令推送某个分支的时候，标签并不会被推送到远程仓库，<strong>所以我们必须显式的推送标签到远程仓库</strong>。</p> <p>使用下面两种命令则可以推送标签到远程仓库：</p> <ul> <li><code>git push &lt;remote&gt; &lt;tag_name&gt;</code>：推送某个标签到远程仓库。</li> <li><code>git push &lt;remote&gt; --tags</code>：推送所有标签到远程仓库。</li> </ul> <p>同样，在删除本地的标签后，要想删除远程仓库的标签，也必须使用的显式的命令：</p> <ul> <li><code>git push &lt;remote&gt; --delete &lt;tag_name&gt;</code>：删除远程仓库中的某个标签。</li> <li><code>git push &lt;remote&gt; :refs/tags/&lt;tagname&gt;</code>：删除远程仓库某个标签的等价方式，相当于将冒号前面的空值推送到远程标签名，从而高效地删除它。</li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-57653.htm">济南哪里有免费领养宠物的地方呀（济南免费领养宠物狗）</a></p>
+                                        <p>下一个：<a href="/news/article-58230.htm">太原领养狗狗地方在那里（太原哪里可以领养小狗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-44579.htm" title="四川成都兽药厂名单（成都哪儿有卖兽药的）">四川成都兽药厂名单（成都哪儿有卖兽药的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-13-node-share-links.htm" title="12月13日→19.7M/S|2024年最新免费节点Mellow Github订阅链接地址">12月13日→19.7M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-57653.htm" title="济南哪里有免费领养宠物的地方呀（济南免费领养宠物狗）">济南哪里有免费领养宠物的地方呀（济南免费领养宠物狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-high-speed-nodes.htm" title="1月14日→21M/S|2025年最新免费节点Mellow Github订阅链接地址">1月14日→21M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41107.htm" title="昆明免费领养猫咪的地方（昆明本地免费领养猫）">昆明免费领养猫咪的地方（昆明本地免费领养猫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-free-node-subscribe.htm" title="2月8日→18.3M/S|2025年最新免费节点Mellow Github订阅链接地址">2月8日→18.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24875.htm" title="农大动物医院地址电话（农大动物医院电话地址）">农大动物医院地址电话（农大动物医院电话地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe-links.htm" title="1月7日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址">1月7日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30965.htm" title="动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么">动物接种疫苗,剂量越大越好吗,为什么 动物接种疫苗,剂量越大越好吗,为什么</a></li>
+                        <li class="py-2"><a href="/news/article-21186.htm" title="动物防疫站***需要什么手续才能打（动物防疫站打疫苗）">动物防疫站***需要什么手续才能打（动物防疫站打疫苗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
