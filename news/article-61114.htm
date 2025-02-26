@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-61114.htm" />
+    <!-- TITLE OF SITE -->
+    <title>idea中的Maven项目怎么配置Tomcat部署</title>
+        <meta name="description" content="idea中的Maven项目怎么配置Tomcat部署    1. 开篇简介 2. 开始部署 3. 总结     1. 开篇简介 嗨，大家好！ 今天，我想给大家分享的是：如何在idea中的Maven项目怎" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-61114.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="idea中的Maven项目怎么配置Tomcat部署" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/6bf4daa9187c9d4ba6e495fc3016fb8e.webp" />
+        <meta property="og:release_date" content="2025-02-22T07:12:22" />
+    <meta property="og:updated_time" content="2025-02-22T07:12:22" />
+        <meta property="og:description" content="idea中的Maven项目怎么配置Tomcat部署    1. 开篇简介 2. 开始部署 3. 总结     1. 开篇简介 嗨，大家好！ 今天，我想给大家分享的是：如何在idea中的Maven项目怎" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="idea中的Maven项目怎么配置Tomcat部署">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>idea中的Maven项目怎么配置Tomcat部署</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> <div class="toc"> <h3>idea中的Maven项目怎么配置Tomcat部署</h3> <ul> <li> <ul> <li><a href="#1__2" rel="nofollow">1. 开篇简介</a></li> <li><a href="#2__9" rel="nofollow">2. 开始部署</a></li> <li><a href="#3__38" rel="nofollow">3. 总结</a></li> </ul> </li> </ul> </div> <h2><a id="1__2" rel="nofollow"></a>1. 开篇简介</h2> <p>嗨，大家好！<br /> 今天，我想给大家分享的是：如何在<strong>idea中的Maven项目怎么配置Tomcat部署</strong>。这一部分，<strong>你需要知道：</strong></p> <ol> <li><strong>如何在Mavem项目中创建一个Web项目</strong></li> <li><strong>然后，你需要下载一个tomcat的服务器，这里需要下载它的一个zip文件</strong><br /> 你在知道前两个的<strong>前提之下</strong>，<strong>你就可以配置TomCat的部署了</strong>。近期，有时间，我也会更新前面两个内容的。</li> </ol> <h2><a id="2__9" rel="nofollow"></a>2. 开始部署</h2> <p>1 ）打开你的idea<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220706/948493a210ca0d8a7a8dadf44c697063.jpg" alt="idea中的Maven项目怎么配置Tomcat部署"><br /> 先点击1，之后你会看到2，然后你就可以点击2进行配置了</p> <p>2 ）进去配置设置界面<br /> 现在，我们就进入到了，配置的一个设置界面<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220706/02a4bae3cac782a419e617fc3805aad2.jpg" alt="idea中的Maven项目怎么配置Tomcat部署"><br /> 这里，你可以点击➕，就可以进行配置了</p> <p>3 ）去选择Tomcat进行配置<br /> 这里需要注意的是：尽量选择Locat,这是本地的，你点击➕之后，需要向下滑动寻找到Tomcat。<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220706/905625a5e9531132e54b0b8604944d48.jpg" alt="idea中的Maven项目怎么配置Tomcat部署"><br /> 4 ）对于Tomcat的一些配置<br /> 大家看着图片的说明配置就行<br /> 这里需要注意的是：<strong>选择Tomcat时候，选择到它本身的文件夹下（就是bin.的上一级目录，这里不要选择类bin目录）</strong></p> <p> 5 ）配置Aritifacts文件</p> <p>之后，大家选择fix安装就行，然后，点击第一个，它的意思是：你的项目是以什么方式发布到Tomcat上边的<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220706/84b3c1b5b52cbd7e19caade0ef708fec.jpg" alt="idea中的Maven项目怎么配置Tomcat部署"><br /> 这里的<br /> Web:war : 先打成war包,然后再发布到Tomcat的ROOT下<br /> Web:war exploded :只编译,生成target;然后把当前的target文件夹的位置关系上传到服务器;没有打包到tomcat的ROOT下</p> <p>6 ）完成位置<br /> 这样你就完成了配置<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220706/d6ace6e5170a05e52f2d09c1157c6f17.jpg" alt="idea中的Maven项目怎么配置Tomcat部署"></p> <h2><a id="3__38" rel="nofollow"></a>3. 总结</h2> <p>这就是idea 中的maven项目，怎么配置tomcat部署了，平常的部署基本也是这样。如果有什么不对的地方，建议大家评论区走起，希望小编能够解决你的问题。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-61113.htm">toString() 和 new String()用法区别</a></p>
+                                        <p>下一个：<a href="/news/article-61699.htm">动物疫苗佐剂类型（动物疫苗的种类和制备原理）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-54324.htm" title="动物医院看病多少钱一天啊图片（动物医院诊疗范围）">动物医院看病多少钱一天啊图片（动物医院诊疗范围）</a></li>
+                        <li class="py-2"><a href="/news/article-59934.htm" title="北京领养小狗（北京领养小狗公司）">北京领养小狗（北京领养小狗公司）</a></li>
+                        <li class="py-2"><a href="/news/article-20732.htm" title="C#把EXCEL数据转换成DataTable_C#教程_">C#把EXCEL数据转换成DataTable_C#教程_</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-subscribe-node.htm" title="1月13日→19M/S|2025年最新免费节点Mellow Github订阅链接地址">1月13日→19M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-15-free-subscribe-node.htm" title="1月15日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址">1月15日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-node-subscribe-links.htm" title="2月1日→19.1M/S|2025年最新免费节点Mellow Github订阅链接地址">2月1日→19.1M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-node-subscribe-links.htm" title="1月7日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址">1月7日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-node-share-links.htm" title="12月23日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址">12月23日→19.5M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-41599.htm" title="动物防疫站***需要什么手续（动物防疫站***需要什么手续呢）">动物防疫站***需要什么手续（动物防疫站***需要什么手续呢）</a></li>
+                        <li class="py-2"><a href="/news/article-42612.htm" title="猫三联好还是妙三多好（猫3联和妙三多）">猫三联好还是妙三多好（猫3联和妙三多）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
