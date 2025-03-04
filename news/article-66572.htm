@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-66572.htm" />
+    <!-- TITLE OF SITE -->
+    <title>vue跳转页面打开新窗口,并携带与接收参数方式_vue.js_</title>
+        <meta name="description" content="目录  1、携带普通类型参数 2、携带复杂类型参数 vue页面跳转并传参的八种方式  方法一 方法二 方法三 方法四 方法五 方法六 方法七 方法八     1、携带普通类型参数 字符串、数字等。 p" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-66572.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="vue跳转页面打开新窗口,并携带与接收参数方式_vue.js_" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/1d014f0fffd88efe256a4d0251e93dce.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:14:43" />
+    <meta property="og:updated_time" content="2025-03-03T08:14:43" />
+        <meta property="og:description" content="目录  1、携带普通类型参数 2、携带复杂类型参数 vue页面跳转并传参的八种方式  方法一 方法二 方法三 方法四 方法五 方法六 方法七 方法八     1、携带普通类型参数 字符串、数字等。 p" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue跳转页面打开新窗口,并携带与接收参数方式_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>vue跳转页面打开新窗口,并携带与接收参数方式_vue.js_</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">1、携带普通类型参数</a></li> <li><a href="#_label1" rel="nofollow">2、携带复杂类型参数</a></li> <li><a href="#_label2" rel="nofollow">vue页面跳转并传参的八种方式</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_2_0" rel="nofollow">方法一</a></li> <li><a href="#_lab2_2_1" rel="nofollow">方法二</a></li> <li><a href="#_lab2_2_2" rel="nofollow">方法三</a></li> <li><a href="#_lab2_2_3" rel="nofollow">方法四</a></li> <li><a href="#_lab2_2_4" rel="nofollow">方法五</a></li> <li><a href="#_lab2_2_5" rel="nofollow">方法六</a></li> <li><a href="#_lab2_2_6" rel="nofollow">方法七</a></li> <li><a href="#_lab2_2_7" rel="nofollow">方法八</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>1、携带普通类型参数</h2> <p>字符串、数字等。</p> <p><code>path</code>：要跳转新页面的路由链接</p> <p><code>query</code>：要携带的参数</p> <div class="ay1code"> <pre class="brush:js;">let pathInfo = this.$router.resolve({    path:'/product_detail',       query:{           productId:'11'       }   })   window.open(pathInfo.href, '_blank');</pre> </div> <p>新页面的参数接收：</p> <div class="ay1code"> <pre class="brush:js;">this.productId = this.$route.query.productId</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>2、携带复杂类型参数</h2> <p>对象、数组等，通过JSON转换进行传递。</p> <div class="ay1code"> <pre class="brush:js;">let pathInfo = this.$router.resolve({     path:'/product_detail',       query:{           data:{name:'张三'}       }   })   window.open(pathInfo.href, '_blank');</pre> </div> <p>新页面的参数接收：</p> <div class="ay1code"> <pre class="brush:js;">console.log(this.$route.query.data)</pre> </div> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>vue页面跳转并传参的八种方式</h2> <p>我们知道，在vue中每个页面都需要在路由中声明，就是在router/index.js中写下面代码：</p> <div class="ay1code"> <pre class="brush:js;">import Vue from 'vue'  import Router from 'vue-router'  import Test from "../components/Test";  Vue.use(Router)  export default new Router({    mode: 'history',    routes: [            {                path: '/t',                name: 'Test',                component: Test,                hidden:true              },          ]      })</pre> </div> <p>实现页面跳转并传参有多种方式：</p> <p class="maodian"><a name="_lab2_2_0" rel="nofollow"></a></p> <h3>方法一</h3> <p>在template中可以使用&lt;router-link&gt;标签实现跳转，跳转的路径是http://localhost:8080/t?index=id，如下：</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;router-link to="/t?index=1"&gt;       &lt;button class="btn btn-default"&gt;点击跳转&lt;/button&gt;  &lt;/router-link&gt;</pre> </div> <p>只需要点击按钮就可以实现跳转，不需要写js代码，需要传递参数的话只需要/t?index=1即可，这样的话跳转的页面获取参数通过window.location.href能够获取到完整的url,然后截取参数。也可以通过下面代码获取参数</p> <div class="ay1code"> <pre class="brush:js;">this.$route.query.index</pre> </div> <p class="maodian"><a name="_lab2_2_1" rel="nofollow"></a></p> <h3>方法二</h3> <p>跳转的路径是http://localhost:8080/t?index=id</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;router-link :to="{path:'/t',query: {index: 1}}"&gt;       &lt;button class="btn btn-default"&gt;点击跳转&lt;/button&gt;  &lt;/router-link&gt;</pre> </div> <p>其中需要注意，这里的to前面一定要加冒号，path的值要和上面路由定义的值一致，传参用query，里面是参数字典。</p> <p>接收参数：</p> <div class="ay1code"> <pre class="brush:js;">this.$route.query.index</pre> </div> <p class="maodian"><a name="_lab2_2_2" rel="nofollow"></a></p> <h3>方法三</h3> <p>命名路由的方式：</p> <p>跳转的路径是http://localhost:8080/t?index=id</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;router-link :to="{name:'Test',params: {index: 1}}"&gt;       &lt;button class="btn btn-default"&gt;点击跳转&lt;/button&gt;  &lt;/router-link&gt;</pre> </div> <p>注意这里的name也要和router/index.js中声明的name值一致，并且传参使用params，和name配对的是params，和path配对的是query。</p> <p>接收参数：</p> <div class="ay1code"> <pre class="brush:js;">this.$route.params.index  </pre> </div> <p class="maodian"><a name="_lab2_2_3" rel="nofollow"></a></p> <h3>方法四</h3> <p>跳转的路径是http://localhost:8080/t/id</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;router-link:to="'/test/'+1"&gt;       &lt;button class="btn btn-default"&gt;点击跳转&lt;/button&gt;  &lt;/router-link&gt;</pre> </div> <p>这时的路由也需要更为为下面的形式：</p> <div class="ay1code"> <pre class="brush:js;">routes: [            {                path: '/t/:index',                name: 'Test',                component: Test,                hidden:true              },          ]</pre> </div> <p>接收参数：</p> <div class="ay1code"> <pre class="brush:js;">this.$route.params.index</pre> </div> <p class="maodian"><a name="_lab2_2_4" rel="nofollow"></a></p> <h3>方法五</h3> <p>上面四种方法都是在html中实现的跳转，还有另外对应的在js中实现的跳转并传参的方法，代码如下：</p> <div class="ay1code"> <pre class="brush:js;">&lt;template&gt;  &lt;button @click = "func()"&gt;跳转&lt;/button&gt;  &lt;/template&gt;  &lt;script&gt;      export default{          methods:{              func (){                  this.$router.push({path: '/t?index=1'});              }          }      }  &lt;/script&gt;</pre> </div> <p>接收参数依然使用</p> <div class="ay1code"> <pre class="brush:js;">this.$route.query.index</pre> </div> <p class="maodian"><a name="_lab2_2_5" rel="nofollow"></a></p> <h3>方法六</h3> <div class="ay1code"> <pre class="brush:js;">&lt;template&gt;  &lt;button @click = "func()"&gt;跳转&lt;/button&gt;  &lt;/template&gt;  &lt;script&gt;      export default{          methods:{              func (){                  this.$router.push({path: '/t',query:{ index:'1'}});              }          }      }  &lt;/script&gt;  </pre> </div> <p>接收参数依然使用</p> <div class="ay1code"> <pre class="brush:js;">this.$route.query.index</pre> </div> <p class="maodian"><a name="_lab2_2_6" rel="nofollow"></a></p> <h3>方法七</h3> <div class="ay1code"> <pre class="brush:js;">&lt;template&gt;  &lt;button @click = "func()"&gt;跳转&lt;/button&gt;  &lt;/template&gt;  &lt;script&gt;      export default{          methods:{              func (){                  this.$router.push({path: '/t/index'});              }          }      }  &lt;/script&gt;  </pre> </div> <p>接收参数依然使用</p> <div class="ay1code"> <pre class="brush:js;">this.$route.query.index</pre> </div> <p class="maodian"><a name="_lab2_2_7" rel="nofollow"></a></p> <h3>方法八</h3> <div class="ay1code"> <pre class="brush:js;">&lt;template&gt;  &lt;button @click = "func()"&gt;跳转&lt;/button&gt;  &lt;/template&gt;  &lt;script&gt;      export default{          methods:{              func (){                  this.$router.push({name: 'Test',params:{ index:'1'}});              }          }      }  &lt;/script&gt;</pre> </div> <p>接收参数依然使用</p> <div class="ay1code"> <pre class="brush:js;">this.$route.params.index  </pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65939.htm">上海宠物美容师工资（上海宠物美容师工资待遇）</a></p>
+                                        <p>下一个：<a href="/news/article-66573.htm">动物医院好评语30字以内怎么写（动物医院好评模板）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-node-subscribe-links.htm" title="1月20日→21.3M/S|2025年最新免费节点Mellow Github订阅链接地址">1月20日→21.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-free-subscribe-node.htm" title="12月8日→18M/S|2024年最新免费节点Mellow Github订阅链接地址">12月8日→18M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-node-share.htm" title="12月22日→21.1M/S|2024年最新免费节点Mellow Github订阅链接地址">12月22日→21.1M/S|2024年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-free-node-subscribe.htm" title="2月21日→18M/S|2025年最新免费节点Mellow Github订阅链接地址">2月21日→18M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-52162.htm" title="手撕spring核心源码，彻底搞懂spring流程">手撕spring核心源码，彻底搞懂spring流程</a></li>
+                        <li class="py-2"><a href="/news/article-37165.htm" title="动物医院评价怎么写好（宠物医院评价怎么写）">动物医院评价怎么写好（宠物医院评价怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-22566.htm" title="家养的布偶猫值得买吗（家养布偶猫价格多少钱一只）">家养的布偶猫值得买吗（家养布偶猫价格多少钱一只）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-1-free-node-subscribe-links.htm" title="1月1日→18.8M/S|2025年最新免费节点Mellow Github订阅链接地址">1月1日→18.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35754.htm" title="中国十大动物疫苗公司排名榜 中国十大动物疫苗公司排名榜单">中国十大动物疫苗公司排名榜 中国十大动物疫苗公司排名榜单</a></li>
+                        <li class="py-2"><a href="/news/article-48411.htm" title=".NET 6上的WebView2体验_在线工具">.NET 6上的WebView2体验_在线工具</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
