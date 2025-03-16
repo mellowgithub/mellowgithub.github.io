@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-75093.htm" />
+    <!-- TITLE OF SITE -->
+    <title>promise和async/await区别</title>
+        <meta name="description" content="拓展：js中同步、异步  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js的同步和异步问题通常是指ajax的回调，如果是同步调用，程序在发出ajax" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-75093.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="promise和async/await区别" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/1d014f0fffd88efe256a4d0251e93dce.webp" />
+        <meta property="og:release_date" content="2025-03-16T10:30:00" />
+    <meta property="og:updated_time" content="2025-03-16T10:30:00" />
+        <meta property="og:description" content="拓展：js中同步、异步  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js的同步和异步问题通常是指ajax的回调，如果是同步调用，程序在发出ajax" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="promise和async/await区别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>promise和async/await区别</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>拓展：js中同步、异步</p> <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js的同步和异步问题通常是指ajax的回调，如果是同步调用，程序在发出ajax调用后就会暂停，直到远程服务器产生回应后才会继续运行。而如果是异步调用，程序发出ajax调用后不会暂停，而是立即执行后面的代码，服务器返回信息后会自动触发回调函数进行处理。</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相比较而言，异步调用的性能最佳，程序不会出现卡顿的现象，而同步调用则通常用于需要立即获得结果并实时处理的情况。</p> <p><strong>promise的用法</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Promise,简单来说就是一个容器，里面保存着某个未来才会结束的时间(通常是一个异步操作的结果)</p> <p><strong>基本语法：</strong></p> <pre><code class="language-javascript"> let p = new Promise((resolve,reject) =&gt; {         //...         resolve('success')     });          p.then(result =&gt; {         console.log(result);//success     });</code></pre> <p><strong>promise共有三个状态：</strong><br /> pending（执行中）、success（成功）、rejected（失败）</p> <p><strong>链式调用<br /> 错误捕获</strong><br /> Promise.prototype.catch用于指定Promise状态变为rejected时的回调函数，可以认为是.then的简写形势，返回值跟.then一样</p> <pre><code class="language-javascript">`let p = new Promise((resolve,reject) =&gt; {     reject('error'); });  p.catch(result =&gt; {     console.log(result); })`</code></pre> <p><strong>async、await</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简洁：异步编程的最高境界就是不关心它是否是异步。async、await很好的解决了这一点，将异步强行转换为同步处理。<br /> async/await与promise不存在谁代替谁的说法，因为async/await是寄生于Promise，Generater的语法糖。</p> <p><strong>用法</strong><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;async用于申明一个function是异步的，而await可以认为是async wait的简写，等待一个异步方法执行完成。</p> <p><strong>规则：</strong></p> <ol> <li>async和await是配对使用的，await存在于async的内部。否则会报错</li> <li>await表示在这里等待一个promise返回，再接下来执行</li> <li>await后面跟着的应该是一个promise对象，（也可以不是，如果不是接下来也没什么意义了…）</li> </ol> <p><strong>写法：</strong></p> <pre><code class="language-javascript">async function demo() { let result01 = await sleep(100); //上一个await执行之后才会执行下一句 let result02 = await sleep(result01 + 100); let result03 = await sleep(result02 + 100); // console.log(result03); return result03; }</code></pre> <pre><code class="language-javascript">demo().then(result =&gt; {     console.log(result); });`</code></pre> <h2>错误捕获</h2> <p>如果是reject状态，可以用try-catch捕捉</p> <pre><code class="language-javascript">let p = new Promise((resolve,reject) =&gt; {     setTimeout(() =&gt; {         reject('error');     },1000); });  async function demo(params) {     try {         let result = await p;     }catch(e) {         console.log(e);     } }  demo();</code></pre> </h1> <p>1 promise是ES6，async/await是ES7<br /> 2 async/await相对于promise来讲，写法更加优雅<br /> 3 reject状态：<br /> &nbsp; &nbsp; 1）promise错误可以通过catch来捕捉，建议尾部捕获错误，<br /> &nbsp; &nbsp; 2）async/await既可以用.then又可以用try-catch捕捉</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-74385.htm">参观动物医院的心得体会300字（参观动物园心得）</a></p>
+                                        <p>下一个：<a href="/news/article-75094.htm">动物疫苗生产厂家联系电话查询（动物疫苗经销商）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38635.htm" title="kafka系列SpringBoot 中使用@KafkaListener详解与使用">kafka系列SpringBoot 中使用@KafkaListener详解与使用</a></li>
+                        <li class="py-2"><a href="/news/article-65938.htm" title="宠物领养平台免费有哪些 宠物领养平台免费有哪些软件">宠物领养平台免费有哪些 宠物领养平台免费有哪些软件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-31-node-share.htm" title="1月31日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址">1月31日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-61114.htm" title="idea中的Maven项目怎么配置Tomcat部署">idea中的Maven项目怎么配置Tomcat部署</a></li>
+                        <li class="py-2"><a href="/news/article-65326.htm" title="广州狗狗领养中心（广州犬只领养中心）">广州狗狗领养中心（广州犬只领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-66573.htm" title="动物医院好评语30字以内怎么写（动物医院好评模板）">动物医院好评语30字以内怎么写（动物医院好评模板）</a></li>
+                        <li class="py-2"><a href="/news/article-60537.htm" title="宠物领养市场前景分析（宠物领养价格）">宠物领养市场前景分析（宠物领养价格）</a></li>
+                        <li class="py-2"><a href="/news/article-44092.htm" title="生产环境MySQL索引时效的排查过程_Mysql_">生产环境MySQL索引时效的排查过程_Mysql_</a></li>
+                        <li class="py-2"><a href="/news/article-47041.htm" title="动物疫苗打到人身上会怎么样 动物疫苗打到人身上会怎么样吗">动物疫苗打到人身上会怎么样 动物疫苗打到人身上会怎么样吗</a></li>
+                        <li class="py-2"><a href="/news/article-73064.htm" title="动物医院实践心得体会怎么写啊（动物医院实践心得2000）">动物医院实践心得体会怎么写啊（动物医院实践心得2000）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
