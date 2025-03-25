@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-81258.htm" />
+    <!-- TITLE OF SITE -->
+    <title>springmvc获取页面值为null的原因</title>
+        <meta name="description" content="springmvc获取from页面值时，能正常进入controller方法，但是获取页面的值为null，提交类型type为button改submit类型" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-81258.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="springmvc获取页面值为null的原因" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/615d61cfbefaab1ce17ea7462370f1c4.webp" />
+        <meta property="og:release_date" content="2025-03-25T08:19:51" />
+    <meta property="og:updated_time" content="2025-03-25T08:19:51" />
+        <meta property="og:description" content="springmvc获取from页面值时，能正常进入controller方法，但是获取页面的值为null，提交类型type为button改submit类型" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="springmvc获取页面值为null的原因">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>springmvc获取页面值为null的原因</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>springmvc获取from页面值时，能正常进入controller方法，但是获取页面的值为null，提交类型type为button改submit类型</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="569" src="http://img.555519.xyz/uploads/20230109/5f829a2ec3d88e4f695031043a5180a6.jpg"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80583.htm">动物疫苗的制造技术包括（动物疫苗研发生产流程）</a></p>
+                                        <p>下一个：<a href="/news/article-81259.htm">动物医院收费标准文件是什么样的（动物医院手续）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-75093.htm" title="promise和async/await区别">promise和async/await区别</a></li>
+                        <li class="py-2"><a href="/news/article-62885.htm" title="上海宠物医院纪录片（上海宠物医院纪录片是哪个）">上海宠物医院纪录片（上海宠物医院纪录片是哪个）</a></li>
+                        <li class="py-2"><a href="/news/article-75760.htm" title="12种适合懒人养的宠物（方便养的迷你小宠物）">12种适合懒人养的宠物（方便养的迷你小宠物）</a></li>
+                        <li class="py-2"><a href="/news/article-74383.htm" title="动物诊疗许可证需要多少钱（动物诊疗许可证条件）">动物诊疗许可证需要多少钱（动物诊疗许可证条件）</a></li>
+                        <li class="py-2"><a href="/news/article-38639.htm" title="大人让猫抓了怎么办啊（大人让猫抓了怎么办啊）">大人让猫抓了怎么办啊（大人让猫抓了怎么办啊）</a></li>
+                        <li class="py-2"><a href="/news/article-61114.htm" title="idea中的Maven项目怎么配置Tomcat部署">idea中的Maven项目怎么配置Tomcat部署</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-node-share.htm" title="3月2日→21M/S|2025年最新免费节点Mellow Github订阅链接地址">3月2日→21M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-free-node-subscribe.htm" title="2月28日→19.8M/S|2025年最新免费节点Mellow Github订阅链接地址">2月28日→19.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-free-node-subscribe.htm" title="2月6日→22.6M/S|2025年最新免费节点Mellow Github订阅链接地址">2月6日→22.6M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48037.htm" title="重庆宠物领养吧最新消息视频（重庆宠物领养重庆宠物赠送）">重庆宠物领养吧最新消息视频（重庆宠物领养重庆宠物赠送）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
