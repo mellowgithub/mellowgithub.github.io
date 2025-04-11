@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-90580.htm" />
+    <!-- TITLE OF SITE -->
+    <title>egg.js在Nginx docker中提示 Session ID unknown</title>
+        <meta name="description" content="问题： 在本地启动egg.js，使用egg-socket.io，能正常连接到websocket，而放到docker中运行，则无法连接得上，提示Session ID unknown，http报400错误" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-90580.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="egg.js在Nginx docker中提示 Session ID unknown" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/81748aa6bab7cca5d33a53528e483800.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:02:58" />
+    <meta property="og:updated_time" content="2025-04-07T09:02:58" />
+        <meta property="og:description" content="问题： 在本地启动egg.js，使用egg-socket.io，能正常连接到websocket，而放到docker中运行，则无法连接得上，提示Session ID unknown，http报400错误" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="egg.js在Nginx docker中提示 Session ID unknown">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>egg.js在Nginx docker中提示 Session ID unknown</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p><strong>问题：</strong> 在本地启动egg.js，<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://xn--egg-socket-2u5pm927a.io"  rel="nofollow">使用egg-socket.io</a>，能正常连接到websocket，而放到docker中运行，则无法连接得上，提示Session ID unknown，http报400错误。</p> <p><strong>原因：</strong> 之所以在本地能成功连接，是因为本地启动方式为<code>egg-bin dev</code>，会针对本地开发做很多处理，而在docker中启动脚本是<code>egg-scripts start</code>，如果没有在sticky模式下运行，则会出现无法正常连接，同时报错。</p> <p>值得注意点是Egg框架是以 Cluster 方式启动的，而<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://socket.io"  rel="nofollow">socket.io</a> 协议实现需要 sticky 特性支持，否则在多进程模式下无法正常工作。</p> <p>由于<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://socket.io"  rel="nofollow">socket.io</a> 的设计，在多进程中服务器必须在<code>sticky</code> 模式下工作，故需要给 startCluster 传递 sticky 参数。</p> <p>添加之后再运行就连接正常了。</p> <p>修改<code>package.json</code> 中<code>npm scripts</code> 脚本：</p> <pre><code class="prism language-javascript"><span class="token punctuation">{<!-- --></span><span class="token string">"scripts"</span><span class="token punctuation">:</span><span class="token punctuation">{<!-- --></span><span class="token string">"dev"</span><span class="token punctuation">:</span><span class="token string">"egg-bin dev --sticky"</span><span class="token punctuation">,</span><span class="token string">"start"</span><span class="token punctuation">:</span><span class="token string">"egg-scripts start --sticky"</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p><strong>Nginx 配置</strong></p> <pre><code>location / {   # 这两行需要开启   proxy_set_header Upgrade $http_upgrade;   proxy_set_header Connection "upgrade";   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;   proxy_set_header Host $host;   proxy_pass   http://127.0.0.1:7001; }</code></pre> <h4><a id="Cluster__31" rel="nofollow"></a>Cluster 是什么呢？</h4> <p>简单的说，</p> <ul> <li>在服务器上同时启动多个进程。</li> <li>每个进程里都跑的是同一份源代码（好比把以前一个进程的工作分给多个进程去做）。</li> <li>更神奇的是，这些进程可以同时监听一个端口（具体原理推荐阅读 @DavidCai1993 这篇<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://cnodejs.org/topic/56e84480833b7c8a0492e20c"  rel="nofollow">Cluster 实现原理</a>）。</li> </ul> <p>其中：</p> <ul> <li>负责启动其他进程的叫做 Master 进程，他好比是个『包工头』，不做具体的工作，只负责启动其他进程。</li> <li>其他被启动的叫 Worker 进程，顾名思义就是干活的『工人』。它们接收请求，对外提供服务。</li> <li>Worker 进程的数量一般根据服务器的 CPU 核数来定，这样就可以完美利用多核资源。</li> </ul> <pre><code class="prism language-javascript"><span class="token keyword">const</span> cluster<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cluster'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> http<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">const</span> numCPUs<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cpus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>cluster<span class="token punctuation">.</span>isMaster<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// Fork workers.</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> numCPUs<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     cluster<span class="token punctuation">.</span><span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span>    cluster<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'exit'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>worker<span class="token punctuation">,</span> code<span class="token punctuation">,</span> signal<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'worker '</span><span class="token operator">+</span> worker<span class="token punctuation">.</span>process<span class="token punctuation">.</span>pid<span class="token operator">+</span><span class="token string">' died'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{<!-- --></span><span class="token comment">// Workers can share any TCP connection</span><span class="token comment">// In this case it is an HTTP server</span>   http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>     res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"hello world\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89846.htm">猫三针疫苗打完多久可以绝育（猫三针疫苗打完多久可以绝育了）</a></p>
+                                        <p>下一个：<a href="/news/article-90581.htm">小动物疫苗注射证明在哪里办理手续（小动物疫苗本）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-74385.htm" title="参观动物医院的心得体会300字（参观动物园心得）">参观动物医院的心得体会300字（参观动物园心得）</a></li>
+                        <li class="py-2"><a href="/news/article-79174.htm" title="兽用疫苗营业执照如何描述（兽用疫苗经营许可证）">兽用疫苗营业执照如何描述（兽用疫苗经营许可证）</a></li>
+                        <li class="py-2"><a href="/news/article-86933.htm" title="南京无偿领养宠物猫吧最新消息（南京宠物领养南京宠物赠送）">南京无偿领养宠物猫吧最新消息（南京宠物领养南京宠物赠送）</a></li>
+                        <li class="py-2"><a href="/news/article-79865.htm" title="idea配置本地maven仓库">idea配置本地maven仓库</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-node-share-links.htm" title="3月16日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址">3月16日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-86932.htm" title="pandas读取csv文件失败">pandas读取csv文件失败</a></li>
+                        <li class="py-2"><a href="/news/article-81258.htm" title="springmvc获取页面值为null的原因">springmvc获取页面值为null的原因</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-free-high-speed-nodes.htm" title="4月4日→19.9M/S|2025年最新免费节点Mellow Github订阅链接地址">4月4日→19.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-85494.htm" title="南京狗狗免费领养中心（南京免费领养狗狗在哪）">南京狗狗免费领养中心（南京免费领养狗狗在哪）</a></li>
+                        <li class="py-2"><a href="/news/article-71084.htm" title="哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）">哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

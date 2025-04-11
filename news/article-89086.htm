@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-89086.htm" />
+    <!-- TITLE OF SITE -->
+    <title>Spring Boot + Mybatis-Plus + jasypt 数据库连接加密</title>
+        <meta name="description" content="今天突然发现一个可以在连接数据库的时候将配置加密的东西，在此分享给广大朋友  首先我们导入相关的依赖   &lt;!--加密工具--&gt;  &lt;dependency&gt;      &lt;" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-89086.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="Spring Boot + Mybatis-Plus + jasypt 数据库连接加密" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/4c36da68926d29392129d81905c37f1c.webp" />
+        <meta property="og:release_date" content="2025-04-05T08:19:55" />
+    <meta property="og:updated_time" content="2025-04-05T08:19:55" />
+        <meta property="og:description" content="今天突然发现一个可以在连接数据库的时候将配置加密的东西，在此分享给广大朋友  首先我们导入相关的依赖   &lt;!--加密工具--&gt;  &lt;dependency&gt;      &lt;" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Spring Boot + Mybatis-Plus + jasypt 数据库连接加密">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>Spring Boot + Mybatis-Plus + jasypt 数据库连接加密</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> </h1> <p><em>今天突然发现一个可以在连接数据库的时候将配置加密的东西，在此分享给广大朋友</em></p> <ol> <li>首先我们导入相关的依赖</li> </ol> <pre><code class="prism language-xml"> <span class="token comment">&lt;!--加密工具--&gt;</span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>com.github.ulisesbocchio<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jasypt-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.1.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span> </code></pre> <ol start="2"> <li>之后我们在测试类中编写加密解密</li> </ol> <pre><code class="prism language-java">    <span class="token annotation punctuation">@Test</span>     <span class="token keyword">void</span> <span class="token function">generateKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token comment">// 加密</span>         <span class="token class-name">BasicTextEncryptor</span> encryptor <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BasicTextEncryptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         encryptor<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 盐值</span>         <span class="token class-name">String</span> username <span class="token operator">=</span> encryptor<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token string">"root"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">String</span> password <span class="token operator">=</span> encryptor<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token string">"1233"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"username: "</span> <span class="token operator">+</span> username<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"password: "</span> <span class="token operator">+</span> password<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>encryptor<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>encryptor<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>password<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span> </code></pre> <ol start="3"> <li>结果<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/e038e2b3e825b470106d07b12ab76fd2.jpg" alt="Spring Boot + Mybatis-Plus + jasypt 数据库连接加密"> </li> <li>之后我们在yml中进行配置</li> </ol> <pre><code class="prism language-yml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>   <span class="token key atrule">datasource</span><span class="token punctuation">:</span>     <span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver     <span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//localhost<span class="token punctuation">:</span>3306/jwt_security<span class="token punctuation">?</span>useUnicode=true<span class="token important">&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span>     <span class="token key atrule">username</span><span class="token punctuation">:</span> ENC(otk4Os0hjRq3ui44sSUgsA==)     <span class="token key atrule">password</span><span class="token punctuation">:</span> ENC(glqH/F/UyBJ4s/eMnaGDRQ==)      <span class="token key atrule">jasypt</span><span class="token punctuation">:</span>   <span class="token key atrule">encryptor</span><span class="token punctuation">:</span>     <span class="token key atrule">password</span><span class="token punctuation">:</span> abcd <span class="token comment">#加密盐值</span>     <span class="token key atrule">algorithm</span><span class="token punctuation">:</span> PBEWithMD5AndDES <span class="token comment">#加密算法设置</span>     <span class="token key atrule">iv-generator-classname</span><span class="token punctuation">:</span> org.jasypt.iv.NoIvGenerator </code></pre> <ol start="5"> <li>最后我们进行测试<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/38e6221f84d41e504ebcaed34fc9da70.jpg" alt="Spring Boot + Mybatis-Plus + jasypt 数据库连接加密"> </li> </ol> <ul> <li>查询成功</li> <li>在此记录一次学习的一个过程</li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-88413.htm">宠物领养的网站叫什么（宠物领养网站的设计与实现）</a></p>
+                                        <p>下一个：<a href="/news/article-89087.htm">C语言字符串、字符数组、字符指针</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-89845.htm" title="全国动物疫苗生产厂家名单查询 全国动物疫苗生产厂家名单查询官网">全国动物疫苗生产厂家名单查询 全国动物疫苗生产厂家名单查询官网</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-subscribe-node.htm" title="3月31日→19.1M/S|2025年最新免费节点Mellow Github订阅链接地址">3月31日→19.1M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87662.htm" title="宠物领养须知 宠物领养须知内容">宠物领养须知 宠物领养须知内容</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-node-share.htm" title="3月25日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址">3月25日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-18-free-node-subscribe-links.htm" title="3月18日→19.2M/S|2025年最新免费节点Mellow Github订阅链接地址">3月18日→19.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-free-high-speed-nodes.htm" title="3月15日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址">3月15日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-89087.htm" title="C语言字符串、字符数组、字符指针">C语言字符串、字符数组、字符指针</a></li>
+                        <li class="py-2"><a href="/news/article-81258.htm" title="springmvc获取页面值为null的原因">springmvc获取页面值为null的原因</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-node-share.htm" title="3月4日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址">3月4日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-85494.htm" title="南京狗狗免费领养中心（南京免费领养狗狗在哪）">南京狗狗免费领养中心（南京免费领养狗狗在哪）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
