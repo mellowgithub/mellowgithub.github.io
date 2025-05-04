@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://mellowgithub.github.io/news/article-109085.htm" />
+    <!-- TITLE OF SITE -->
+    <title>Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）</title>
+        <meta name="description" content="你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda 1.什么是anaconda(百度百科)？ Anaconda指的是一个开源" />
+        <link rel="icon" href="/assets/website/img/mellowgithub/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Mellow Github免费机场订阅节点官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://mellowgithub.github.io/news/article-109085.htm" />
+    <meta property="og:site_name" content="Mellow Github免费机场订阅节点官网" />
+    <meta property="og:title" content="Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）" />
+    <meta property="og:image" content="https://mellowgithub.github.io/uploads/20240926-1/58a5ce7059467cf4bf0387313a92926d.webp" />
+        <meta property="og:release_date" content="2025-05-01T09:04:10" />
+    <meta property="og:updated_time" content="2025-05-01T09:04:10" />
+        <meta property="og:description" content="你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda 1.什么是anaconda(百度百科)？ Anaconda指的是一个开源" />
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- CSS Begins
+================================================== -->
+    <!--Animate Effect-->
+    <link href="/assets/website/css/mellowgithub/animate.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/hover.css" rel="stylesheet">
+    <!-- For Image Preview -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/magnific-popup.css">
+    <!--Owl Carousel -->
+    <link href="/assets/website/css/mellowgithub/owl.carousel.css" rel="stylesheet">
+    <!--Slick Carousel -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/slick.css">
+    <!--fontawesome icon -->
+    <link rel="stylesheet" href="/assets/website/css/mellowgithub/fontawesome.min.css">
+    <!--BootStrap -->
+    <link href="/assets/website/css/mellowgithub/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/normalize.css" rel="stylesheet">
+    <!-- Main Style -->
+    <link href="/assets/website/css/mellowgithub/style.css" rel="stylesheet">
+    <link href="/assets/website/css/mellowgithub/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RNC5MM0RKZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RNC5MM0RKZ');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--:::::::: Start: Preloader section ::::::::-->
+    <div class="preloader">
+        <div class="loader loader1"></div>
+        <div class="loader loader2"></div>
+        <div class="loader loader3"></div>
+        <div class="loader loader4"></div>
+        <div class="loader loader5"></div>
+        <div class="loader loader6"></div>
+        <div class="loader loader7"></div>
+        <div class="loader loader8"></div>
+    </div>
+    <!-- :::::::: End: Preloader section  ::::::::-->
+    <!-- Start: header navigation -->
+    <div class="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="logo col-md-4">
+                    <a href="/">
+                                                <span>Mellow Github</span>
+                                            </a>
+                </div>
+                <div class="col-md-8">
+                    <div id="navigation">
+                        <ul>
+                                                        <li><a href="/">首页</a></li>
+                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                        <li><a href="/client.htm">客户端</a></li>
+                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                    </ul>
+                    </div>
+                    <!-- End: Menu  -->
+                </div>
+            </div>
+            <!--/ row -->
+        </div>
+        <!--/ container -->
+    </div>
+    <!-- End: header navigation -->
+    <!-- Start: Cart Sidebar -->
+    <div class="body-overlay transition-3"></div>
+    <!-- Start: Cart Sidebar -->
+    <!-- breadcrumb -->
+    <header class="breadcrumb-section">
+        <!-- Start: Header Content -->
+        <div class="container">
+            <div class="row wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h1>Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）</h1>
+                    <p>
+                        <a href="/"> <i class="fal fa-home-alt"></i> 首页 </a> <i class="fas fa-chevron-right"></i> <a href="/news/"> 新闻资讯 </a> <i class="fas fa-chevron-right"></i> 正文
+                    </p>
+                </div>
+            </div>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. breadcrumb   
+==================================================-->
+    <!-- Start: About Us Section
+==================================================-->
+    <section class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <h2>你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda</h2> <h2>1.什么是anaconda(百度百科)？</h2> <p>Anaconda指的是一个开源的Python发行版本，其包含了conda、Python等<strong>180多个</strong>科学包及其依赖项</p> <p>180多个，只有你想不到，没有它包含不到的哦！！！</p> <h2>2.怎么安装anaconda？</h2> <p>推荐这篇博客：</p> <p>https://blog.csdn.net/qq_26898461/article/details/51488326</p> <p>同时需要配置环境变量</p> <p><img decoding="async" alt="" class="has" height="73" src="http://img.555519.xyz/uploads3/20220904/d5100dc0f0dabcfc5fd5df385bde7aae.jpg"></p> <h2>3.anaconda强大在何处？</h2> <p>可以这么说，安装完anaconda以后，几乎你将来需要用到的所有东西都在里面了。因为我最近在学习PyQt5，又涉及到安装各种依赖，各种软件的时候，顿感头皮发麻，所幸想起来了之前安装的anaconda，于是在安装目录下翻了翻，翻到了宝贝：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="405" src="http://img.555519.xyz/uploads3/20220904/70e5f92a4d37966ec3e5fae89ca29448.jpg"></p> <p>在该目录下找到了designer，双击打开，发现这就是qt设计师呀，同时也可以测试PyQt5也已经装好了。</p> <p>不仅仅是qt设计师，还有比如jupyter，ipython均可以在cmd里面启动，前提是系统变量要配置好</p> <h2>4.如何优雅管理多版本呢？</h2> <p>其实很简单，以python2.7和python3.6为例，我分别安装了python2.7版本的anaconda和python3.6版本的anaconda</p> <p><img decoding="async" alt="" class="has" height="114" src="http://img.555519.xyz/uploads3/20220904/e76ef2e76381651d21afbd648da1dc22.jpg"></p> <p>当使用python3.6的时候，系统变量是这样的：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="157" src="http://img.555519.xyz/uploads3/20220904/2b333c85e8a6c7acb8f8f137fee13282.jpg"></p> <p>当使用python2.7的时候，只需要调整下系统变量的顺序，改成这样既可</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="149" src="http://img.555519.xyz/uploads3/20220904/65e675d77ad00c355a30ef5613b84452.jpg"></p> <h2>5.为什么说这种方式优雅呢？</h2> <p>多版本管理当然有很多种方式，比如虚拟隔离的方法，但是根据我个人经验并不推荐，因为使用python最苦恼的就是安装包或者引用包时各种报错，而安装anaconda显然是一劳永逸式方法。Window下安装软件是非常简单的，一直点下一步就ok了，再配置一个环境变量，以后各种错误都无缘和你相见，所以说用anaconda是优雅的，调整系统变量来管理python版本也是优雅的！！</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109084.htm">json数据交互——@RequestBody与@ResponseBody</a></p>
+                                        <p>下一个：<a href="/news/article-109951.htm">动物医院名字有哪些好听的四个字（动物医院牌子）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-95870.htm" title="Java 集合框架ArrayList 储存自定义数组">Java 集合框架ArrayList 储存自定义数组</a></li>
+                        <li class="py-2"><a href="/news/article-109951.htm" title="动物医院名字有哪些好听的四个字（动物医院牌子）">动物医院名字有哪些好听的四个字（动物医院牌子）</a></li>
+                        <li class="py-2"><a href="/news/article-108269.htm" title="猫三联和妙三（猫三联和妙三多可以混搭么）">猫三联和妙三（猫三联和妙三多可以混搭么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-node-share.htm" title="4月5日→22.9M/S|2025年最新免费节点Mellow Github订阅链接地址">4月5日→22.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-111623.htm" title="宠物领养58同城（正规宠物领养平台）">宠物领养58同城（正规宠物领养平台）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-node-share.htm" title="4月11日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址">4月11日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-97268.htm" title="2021国考公务员报名人数统计（2021年国考公务员人数）">2021国考公务员报名人数统计（2021年国考公务员人数）</a></li>
+                        <li class="py-2"><a href="/news/article-92823.htm" title="golang对接阿里云私有Bucket上传图片、授权访问图片">golang对接阿里云私有Bucket上传图片、授权访问图片</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-28-free-node-subscribe-links.htm" title="4月28日→20.7M/S|2025年最新免费节点Mellow Github订阅链接地址">4月28日→20.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-1-free-subscribe-node.htm" title="4月1日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">4月1日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+        <!-- /. container -->
+    </section>
+    <!-- End: About Us Section
+==================================================-->
+        <!-- Start:Footer Section 
+==================================================-->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Start:Subfooter -->
+            <div class="subfooter_wrap">
+                <div class="subfooter">
+                                        <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                    <p>
+                        <a href="/">Mellow Github免费机场订阅节点官网</a> 版权所有 Powered by WordPress
+                    </p>
+                </div>
+                <div class="footer_socil">
+                    <ul class="list-icons link-list footer_soc">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End:Subfooter -->
+            </div>
+        </div>
+    </footer>
+    <!-- End:Footer Section 
+==================================================-->
+    <!-- Start: scrollup Section 
+==================================================-->
+    <div class="scrollup">
+        <a href="#top"> <i class="fal fa-chevron-double-up"></i> </a>
+    </div>
+    <!-- End: scrollup Section 
+==================================================-->
+    <!-- Scripts
+========================================-->
+    <!-- jquery -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.min.js"></script>
+    <!-- plugins -->
+    <script src="/assets/website/js/frontend/mellowgithub/plugins.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/website/js/frontend/mellowgithub/bootstrap.min.js"></script>
+    <!-- slick carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/slick.min.js"></script>
+    <!-- owl carousel  -->
+    <script src="/assets/website/js/frontend/mellowgithub/owl-carousel.js"></script>
+    <!-- Filter gallery -->
+    <script src="/assets/website/js/frontend/mellowgithub/isotope.js"></script>
+    <!-- Image Zoom  -->
+    <script src="/assets/website/js/frontend/mellowgithub/magnific-popup.js"></script>
+    <!-- ajax Mail chimp  -->
+    <script src="/assets/website/js/frontend/mellowgithub/jquery.ajaxchimp.min.js"></script>
+    <!-- Image Parallax -->
+    <script src="/assets/website/js/frontend/mellowgithub/stellar.min.js"></script>
+    <!-- Custom Scripts
+========================================-->
+    <script src="/assets/website/js/frontend/mellowgithub/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
