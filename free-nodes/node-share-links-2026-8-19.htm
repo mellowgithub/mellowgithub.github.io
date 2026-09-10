@@ -349,29 +349,9 @@ A5：部分版本支持自动切换机制，也可通过规则定义备用节点
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
-    <div class="panel-body">
-        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的节点导入方式有哪些？</h5></div>
-    <div class="panel-body">
-        WinXray 支持手动添加节点、从 URL 订阅导入节点，以及批量导入 JSON 配置文件。用户可以直接复制订阅地址或粘贴节点链接，程序会自动解析并添加到节点列表中，操作十分便捷。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
-    <div class="panel-body">
-        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 的多机场订阅如何整合？</h5></div>
     <div class="panel-body">
         Hiddify Next 提供合并订阅功能，可将多个链接导入同一配置，自动去重并分类节点。用户可设置优先级与标签，方便快速选择不同提供商的线路，提升连接灵活性与冗余度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何将 Clash 节点导入到 Sing-box？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持从 Clash 配置文件中导入节点。用户只需将 YAML 文件放入配置目录或通过命令导入即可。系统会自动解析规则组和节点信息，简化迁移过程。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽限制？</h5></div>
@@ -379,9 +359,9 @@ A5：部分版本支持自动切换机制，也可通过规则定义备用节点
         管理员可为每个用户设置上传和下载带宽上限。超出限制可自动降速或阻止访问，保证服务器资源合理分配，避免单用户占用过多带宽，提高整体公平性和使用效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 全局代理与规则代理的区别是什么？</h5></div>
+    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
     <div class="panel-body">
-        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用或 IP 走节点，优化带宽利用和网络效率，根据不同需求选择使用模式。<hr />    </div>
+        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 如何在 Windows 上加速游戏？</h5></div>
@@ -389,14 +369,34 @@ A5：部分版本支持自动切换机制，也可通过规则定义备用节点
         Netch 使用 TUN/TAP 模式将特定进程流量通过代理转发，常用于游戏加速。用户只需将游戏进程添加到列表，选择合适的代理节点，即可降低延迟并绕过地理限制。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
+    <div class="panel-body">
+        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 支持哪些内核？</h5></div>
+    <div class="panel-body">
+        PassWall2 支持多种代理内核，如 Xray、V2Ray、Sing-box、Trojan-go、Hysteria2 等。用户可在插件管理中切换所需内核，以获得不同协议与性能的支持。部分内核需手动下载并启用。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 如何设置分流规则？</h5></div>
     <div class="panel-body">
         Nekobox 提供图形化规则编辑界面，可基于 IP、域名、地区等条件创建分流规则。例如可设置国内直连、国外代理、特定网站走特定节点，操作直观。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的节点导入方式有哪些？</h5></div>
     <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。    </div>
+        WinXray 支持手动添加节点、从 URL 订阅导入节点，以及批量导入 JSON 配置文件。用户可以直接复制订阅地址或粘贴节点链接，程序会自动解析并添加到节点列表中，操作十分便捷。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 全局代理与规则代理的区别是什么？</h5></div>
+    <div class="panel-body">
+        全局代理会将所有流量通过节点转发，适合游戏或全局科学上网；规则代理只针对指定应用或 IP 走节点，优化带宽利用和网络效率，根据不同需求选择使用模式。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何将 Clash 节点导入到 Sing-box？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持从 Clash 配置文件中导入节点。用户只需将 YAML 文件放入配置目录或通过命令导入即可。系统会自动解析规则组和节点信息，简化迁移过程。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -444,16 +444,16 @@ A5：部分版本支持自动切换机制，也可通过规则定义备用节点
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-node-share.htm" title="8月2日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址">8月2日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-17.htm" title="8月17日→22M/S|2025年最新免费节点Mellow Github订阅链接地址">8月17日→22M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-16-free-subscribe-node.htm" title="8月16日→22.6M/S|2025年最新免费节点Mellow Github订阅链接地址">8月16日→22.6M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-30-node-share.htm" title="7月30日→20.7M/S|2025年最新免费节点Mellow Github订阅链接地址">7月30日→20.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-22-free-node-subscribe.htm" title="7月22日→22.1M/S|2025年最新免费节点Mellow Github订阅链接地址">7月22日→22.1M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-15.htm" title="8月15日→20.8M/S|2025年最新免费节点Mellow Github订阅链接地址">8月15日→20.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-18-free-subscribe-node.htm" title="8月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址">8月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-27.htm" title="8月27日→19.6M/S|2025年最新免费节点Mellow Github订阅链接地址">8月27日→19.6M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-26-free-subscribe-node.htm" title="8月26日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址">8月26日→18.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-free-node-subscribe.htm" title="8月30日→22.9M/S|2025年最新免费节点Mellow Github订阅链接地址">8月30日→22.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-10-free-node-subscribe.htm" title="8月10日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址">8月10日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-18-free-subscribe-node.htm" title="8月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址">8月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-node-share.htm" title="8月8日→22M/S|2025年最新免费节点Mellow Github订阅链接地址">8月8日→22M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-22-free-subscribe-node.htm" title="8月22日→20.8M/S|2025年最新免费节点Mellow Github订阅链接地址">8月22日→20.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-node-share.htm" title="8月6日→22M/S|2025年最新免费节点Mellow Github订阅链接地址">8月6日→22M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-17.htm" title="8月17日→22M/S|2025年最新免费节点Mellow Github订阅链接地址">8月17日→22M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-13.htm" title="8月13日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址">8月13日→18.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-3.htm" title="9月3日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月3日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月4日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -465,10 +465,10 @@ A5：部分版本支持自动切换机制，也可通过规则定义备用节点
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
