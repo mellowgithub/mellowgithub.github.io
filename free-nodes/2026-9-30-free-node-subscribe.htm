@@ -367,19 +367,14 @@ A：隐私安全不仅依赖软件，还需配合合理的网络使用习惯和�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 的规则优先级如何设置？</h5></div>
+    <div class="panel-heading"><h5>SSR 的混淆插件如何提高抗封锁能力？</h5></div>
     <div class="panel-body">
-        在 PassWall2 中，规则的匹配顺序按配置文件自上而下执行。建议将精确规则放在前面，通用规则放后面，以确保高优先级的流量优先被正确分流到指定出口。<hr />    </div>
+        通过混淆插件可以模拟正常 HTTPS 或 HTTP 流量，隐藏真实通信特征。合理选择混淆方式，可有效避免 DPI 检测，提高节点可用性和连接稳定性，保证长期科学上网。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
+    <div class="panel-heading"><h5>如何使用 Sing-box 配合 Clash Rules 实现精细分流？</h5></div>
     <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 可以在哪些平台使用？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 是一款 iOS 平台专用代理客户端，支持多种协议如 Vmess、Shadowsocks、Trojan 等。用户可通过导入订阅链接快速配置节点，配合规则分流功能实现精准网络代理。由于其强大功能，它是 iPhone 用户常用的科学上网工具。<hr />    </div>
+        将 Clash 的 rules 段提取出来转换为 Sing-box 的 routing 格式，或直接引用 rule-providers 源。Sing-box 的路由引擎支持更复杂的条件匹配，可结合 GeoIP 与 keyword 实现精细分流策略。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 如何保证视频流畅播放？</h5></div>
@@ -387,9 +382,9 @@ A：隐私安全不仅依赖软件，还需配合合理的网络使用习惯和�
         WinXray 会结合延迟检测和策略组选择最佳节点转发视频流量。通过自动切换低延迟节点，可保证在线视频播放顺畅，减少卡顿和缓冲，提高整体体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
+    <div class="panel-heading"><h5>PassWall2 的规则优先级如何设置？</h5></div>
     <div class="panel-body">
-        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
+        在 PassWall2 中，规则的匹配顺序按配置文件自上而下执行。建议将精确规则放在前面，通用规则放后面，以确保高优先级的流量优先被正确分流到指定出口。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 策略组如何实现节点优先级切换？</h5></div>
@@ -402,19 +397,24 @@ A：隐私安全不仅依赖软件，还需配合合理的网络使用习惯和�
         多策略组可以将节点按用途、延迟或地域分类，结合路由规则实现自动分流。不同类型流量可走不同节点，提升访问速度和稳定性，特别适合多应用使用场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件如何提高抗封锁能力？</h5></div>
+    <div class="panel-heading"><h5>Shadowrocket 可以在哪些平台使用？</h5></div>
     <div class="panel-body">
-        通过混淆插件可以模拟正常 HTTPS 或 HTTP 流量，隐藏真实通信特征。合理选择混淆方式，可有效避免 DPI 检测，提高节点可用性和连接稳定性，保证长期科学上网。<hr />    </div>
+        Shadowrocket 是一款 iOS 平台专用代理客户端，支持多种协议如 Vmess、Shadowsocks、Trojan 等。用户可通过导入订阅链接快速配置节点，配合规则分流功能实现精准网络代理。由于其强大功能，它是 iPhone 用户常用的科学上网工具。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
+    <div class="panel-body">
+        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 与 Shadowrocket 相比的最大区别是什么？</h5></div>
     <div class="panel-body">
-        QuantumultX 在规则系统和自动化脚本上更灵活，支持丰富的 rewrite 与 filter 功能，而 Shadowrocket 则更轻便易用，适合普通用户快速切换节点。二者可根据使用习惯与功能需求选择。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何使用 Sing-box 配合 Clash Rules 实现精细分流？</h5></div>
-    <div class="panel-body">
-        将 Clash 的 rules 段提取出来转换为 Sing-box 的 routing 格式，或直接引用 rule-providers 源。Sing-box 的路由引擎支持更复杂的条件匹配，可结合 GeoIP 与 keyword 实现精细分流策略。    </div>
+        QuantumultX 在规则系统和自动化脚本上更灵活，支持丰富的 rewrite 与 filter 功能，而 Shadowrocket 则更轻便易用，适合普通用户快速切换节点。二者可根据使用习惯与功能需求选择。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -462,16 +462,16 @@ A：隐私安全不仅依赖软件，还需配合合理的网络使用习惯和�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-subscribe-node.htm" title="9月26日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址">9月26日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-31.htm" title="8月31日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址">8月31日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-27.htm" title="9月27日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月27日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-20-node-share.htm" title="8月20日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址">8月20日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-node-subscribe.htm" title="8月10日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址">8月10日→18.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-8-free-node-subscribe.htm" title="9月8日→20.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月8日→20.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-25.htm" title="8月25日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址">8月25日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-21.htm" title="9月21日→21.6M/S|2025年最新免费节点Mellow Github订阅链接地址">9月21日→21.6M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-19.htm" title="8月19日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">8月19日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-19.htm" title="9月19日→22.5M/S|2025年最新免费节点Mellow Github订阅链接地址">9月19日→22.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-6-node-share.htm" title="10月6日→21.3M/S|2025年最新免费节点Mellow Github订阅链接地址">10月6日→21.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-25.htm" title="9月25日→21.8M/S|2025年最新免费节点Mellow Github订阅链接地址">9月25日→21.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-8-free-subscribe-node.htm" title="10月8日→21.4M/S|2025年最新免费节点Mellow Github订阅链接地址">10月8日→21.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-2-free-node-subscribe.htm" title="10月2日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址">10月2日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-18-node-share.htm" title="9月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址">9月18日→22.7M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月4日→22.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-9.htm" title="9月9日→21.8M/S|2025年最新免费节点Mellow Github订阅链接地址">9月9日→21.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-4-free-node-subscribe.htm" title="10月4日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址">10月4日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-13.htm" title="9月13日→18.1M/S|2025年最新免费节点Mellow Github订阅链接地址">9月13日→18.1M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -483,13 +483,10 @@ A：隐私安全不仅依赖软件，还需配合合理的网络使用习惯和�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">1</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">8</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                     </ul>
     </div>
