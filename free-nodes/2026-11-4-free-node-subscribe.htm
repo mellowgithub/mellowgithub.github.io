@@ -374,14 +374,9 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 如何选择合适混淆提高稳定性？</h5></div>
+    <div class="panel-heading"><h5>VMess AEAD 加密在安全性方面有何优势？</h5></div>
     <div class="panel-body">
-        选择混淆方式时应根据网络环境和封锁程度，例如 tls1.2_ticket_auth 可模拟 HTTPS 流量。合理组合协议和混淆可提升节点稳定性和抗封锁能力，确保长期科学上网体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密对安全性有何帮助？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。高封锁环境下使用，有助于保持节点长期可用，保证数据安全和连接稳定性，同时降低被检测的风险。<hr />    </div>
+        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下保证节点可用，提升数据安全和连接稳定性，同时降低被检测风险，确保长期安全访问。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 的规则文件如何支持广告屏蔽？</h5></div>
@@ -389,19 +384,9 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
         规则文件可添加广告域名或 URL 列表，将请求重定向或阻断。结合策略组和自动更新，Surfboard 可实现全局广告屏蔽，提高浏览体验并节省带宽。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密对安全性有何帮助？</h5></div>
     <div class="panel-body">
-        支持。Nekobox 可以独立管理 Shadowsocks、Clash 等客户端节点，互不干扰。结合策略组，可实现多客户端流量分流和网络优化，提高节点管理效率和使用便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
-    <div class="panel-body">
-        重写（Rewrite）可用于修改请求头、屏蔽广告、替换响应内容等。通过正则匹配目标请求可实现页面定制与功能增强，但应谨慎使用以避免影响正常网站加载与安全验证。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 支持哪几种代理协议？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 支持多种协议，包括 Shadowsocks、Vmess、VLess、Trojan、HTTP、SOCKS5 等。它还可解析部分 QuantumultX 与 Clash 的订阅格式，适合 iOS 用户进行全协议代理管理与切换。<hr />    </div>
+        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。高封锁环境下使用，有助于保持节点长期可用，保证数据安全和连接稳定性，同时降低被检测的风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 支持哪些定制化分流策略？</h5></div>
@@ -409,9 +394,19 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
         QuantumultX 支持域名、IP、端口、协议以及用户自定义脚本分流。结合策略组使用，可实现广告屏蔽、视频加速、游戏优化等功能，提高访问速度和个性化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 的重写规则能做什么？</h5></div>
+    <div class="panel-body">
+        重写（Rewrite）可用于修改请求头、屏蔽广告、替换响应内容等。通过正则匹配目标请求可实现页面定制与功能增强，但应谨慎使用以避免影响正常网站加载与安全验证。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的多策略组有什么作用？</h5></div>
     <div class="panel-body">
         多策略组可以将节点按用途、延迟或地域分类，结合路由规则实现自动分流。不同类型流量可走不同节点，提升访问速度和稳定性，特别适合多应用使用场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 支持哪几种代理协议？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 支持多种协议，包括 Shadowsocks、Vmess、VLess、Trojan、HTTP、SOCKS5 等。它还可解析部分 QuantumultX 与 Clash 的订阅格式，适合 iOS 用户进行全协议代理管理与切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 支持节点手动导入和修改吗？</h5></div>
@@ -419,9 +414,14 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
         支持。用户可以手动输入节点信息或通过扫描二维码导入节点，并进行修改或删除。虽然不支持自动订阅更新，但足以满足轻量级用户对节点管理和分流的需求。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在安全性方面有何优势？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否支持多客户端节点管理？</h5></div>
     <div class="panel-body">
-        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。在高封锁环境下保证节点可用，提升数据安全和连接稳定性，同时降低被检测风险，确保长期安全访问。    </div>
+        支持。Nekobox 可以独立管理 Shadowsocks、Clash 等客户端节点，互不干扰。结合策略组，可实现多客户端流量分流和网络优化，提高节点管理效率和使用便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 如何选择合适混淆提高稳定性？</h5></div>
+    <div class="panel-body">
+        选择混淆方式时应根据网络环境和封锁程度，例如 tls1.2_ticket_auth 可模拟 HTTPS 流量。合理组合协议和混淆可提升节点稳定性和抗封锁能力，确保长期科学上网体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -469,16 +469,16 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-11.htm" title="9月11日→20.5M/S|2025年最新免费节点Mellow Github订阅链接地址">9月11日→20.5M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-node-share.htm" title="9月24日→20.9M/S|2025年最新免费节点Mellow Github订阅链接地址">9月24日→20.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-29.htm" title="10月29日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址">10月29日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-13.htm" title="10月13日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">10月13日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-3.htm" title="9月3日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">9月3日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-subscribe-node.htm" title="9月26日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址">9月26日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-11-7.htm" title="11月7日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址">11月7日→18.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-11-1.htm" title="11月1日→18M/S|2025年最新免费节点Mellow Github订阅链接地址">11月1日→18M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-22-node-share.htm" title="9月22日→21.6M/S|2025年最新免费节点Mellow Github订阅链接地址">9月22日→21.6M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-11-4-free-node-subscribe.htm" title="11月4日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址">11月4日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-node-subscribe.htm" title="9月10日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址">9月10日→20.3M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-18-free-subscribe-node.htm" title="10月18日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址">10月18日→21.9M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-6-free-node-subscribe.htm" title="11月6日→18.8M/S|2025年最新免费节点Mellow Github订阅链接地址">11月6日→18.8M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-29.htm" title="10月29日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址">10月29日→21.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-12-free-node-subscribe.htm" title="11月12日→20.5M/S|2026年最新免费节点Mellow Github订阅链接地址">11月12日→20.5M/S|2026年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-11-9.htm" title="11月9日→22.1M/S|2026年最新免费节点Mellow Github订阅链接地址">11月9日→22.1M/S|2026年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-19.htm" title="10月19日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址">10月19日→22.2M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-free-node-subscribe.htm" title="10月16日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址">10月16日→19.4M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-24-free-subscribe-node.htm" title="10月24日→22.1M/S|2025年最新免费节点Mellow Github订阅链接地址">10月24日→22.1M/S|2025年最新免费节点Mellow Github订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -490,13 +490,10 @@ A: Yes, but free VPNs are often limited in speed, data, or security. For scienti
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                     </ul>
     </div>
